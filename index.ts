@@ -1,5 +1,4 @@
-#!/usr/bin/env node
-
+#! /usr/bin/env node
 import inquirer from "inquirer";
 import chalkAnimation from "chalk-animation";
 import chalk from "chalk";
@@ -20,7 +19,7 @@ const welcome = async () => {
     *: stand for ${chalk.green("Multiplication")} operations
     /: stand for ${chalk.green("Division")} operations
     `);
-  await sleep ()
+  await sleep();
   await Start_op();
 };
 
@@ -29,7 +28,7 @@ const operations = async () => {
     {
       type: "list",
       name: "op",
-      message: chalk.green('chose any operation'),
+      message: chalk.green("chose any operation"),
       choices: ["+", "-", "*", "/"],
     },
   ]);
@@ -73,7 +72,7 @@ const output = async (num1: number, num2: number, op: string) => {
       console.log(`${chalk.bold.red("Your answer is:")} ${ans}`);
       break;
   }
-  await sleep(2000)
+  await sleep(2000);
   await Start_op();
 };
 
@@ -87,9 +86,8 @@ const Start_op = async () => {
     },
   ]);
   const op = String(operation.op);
-  op === "Exit" ?  exit() : await question();
+  op === "Exit" ? exit() : await question();
 };
 
 console.clear();
 await welcome();
-

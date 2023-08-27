@@ -1,6 +1,10 @@
 {
-  "name": "typescript-node-projects",
-  "version": "1.0.0",
+  "name": "calculator_step_0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Abdullah-asif-p/Typescript-node-projects-assignment"
+  },
+  "version": "1.2.0",
   "description": "",
   "main": "index.js",
   "type": "module",
