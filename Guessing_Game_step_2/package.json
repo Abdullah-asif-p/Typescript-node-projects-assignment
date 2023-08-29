@@ -1,0 +1,31 @@
+{
+  "name": "guessing_game_step_2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Abdullah-asif-p/Typescript-node-projects-assignment"
+  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "chalk-animation": "^2.0.3",
+    "figlet": "^1.6.0",
+    "inquirer": "^9.2.10",
+    "nanospinner": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/chalk-animation": "^1.6.1",
+    "@types/figlet": "^1.5.6",
+    "@types/inquirer": "^9.0.3",
+    "@types/node": "^20.5.7"
+  }
+}
