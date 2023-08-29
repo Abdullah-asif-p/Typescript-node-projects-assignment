@@ -2,7 +2,6 @@
 import inquirer from "inquirer";
 import chalkAnimation from "chalk-animation";
 import chalk from "chalk";
-import { exit } from "process";
 const sleep = (ms = 1500) => new Promise((r) => setTimeout(r, ms));
 const welcome = async () => {
     const rainbowTitle = chalkAnimation.rainbow(" ____Calculator____ \n");
@@ -79,7 +78,7 @@ const Start_op = async () => {
         },
     ]);
     const op = String(operation.op);
-    op === "Exit" ? exit() : await question();
+    op === "Exit" ? process.exit(0) : await question();
 };
 console.clear();
 await welcome();
