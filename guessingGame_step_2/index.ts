@@ -39,7 +39,7 @@ const name = async () => {
       },
     },
   ]);
-  playerName = answer.player_name;
+  playerName = answer.name;
 };
 
 const input_num = async (name?: string) => {
