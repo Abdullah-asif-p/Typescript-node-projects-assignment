@@ -12,15 +12,21 @@ const welcome = async () => {
     The Balance for each user is generated randomly
     `);
     await sleep();
-    await inputdata();
+    await inputUserId();
 };
-const inputdata = async () => {
+const inputUserId = async () => {
     const userInput = await inquirer.prompt([
         {
             type: "input",
             name: "id",
             message: "Enter Userid",
         },
+    ]);
+    const id = userInput.id;
+    id == "" ? inputUserId() : inputUserPIn();
+};
+const inputUserPIn = async () => {
+    const userInput = await inquirer.prompt([
         {
             type: "password",
             name: "pin",
@@ -28,10 +34,16 @@ const inputdata = async () => {
             mask: "*",
         },
     ]);
-    return output(userInput.id, userInput.pin);
+    if (Number(userInput.pin) === 1234) {
+        output();
+    }
+    else {
+        inputUserPIn();
+    }
 };
-const checkBalance = async (amount) => {
-    let Balance = Math.floor(Math.random() * (randomInt(1, 200) * randomInt(1, 200) * randomInt(1, 200))) + 1;
+const checkBalance = (amount) => {
+    let Balance = Math.floor(Math.random() *
+        (randomInt(1, 200) * randomInt(1, 200) * randomInt(1, 200))) + 1;
     if (Balance >= amount) {
         Balance -= amount;
         return Balance;
@@ -47,7 +59,7 @@ const inputAmount = async () => {
             type: "list",
             name: "amount",
             message: "Choose amount you want withdraw",
-            choices: [1000, 5000, 10000, 15000, 20000, "other"]
+            choices: [1000, 5000, 10000, 15000, 20000, "other"],
         },
     ]);
     let amount = withdrawal.amount;
@@ -63,16 +75,9 @@ const inputAmount = async () => {
     }
     return amount;
 };
-const output = async (id, pin) => {
-    const matchPin = pin.match(/^1234$/);
-    if (!matchPin) {
-        console.log("Pls renter the pin and userid corectly");
-        await welcome();
-    }
-    else {
-        const amount = await inputAmount();
-        const uBalance = await checkBalance(amount);
-        console.log(`Your remaining balance is $${uBalance}`);
-    }
+const output = async () => {
+    const amount = await inputAmount();
+    const uBalance = checkBalance(amount);
+    console.log(`Your remaining balance is $${uBalance}`);
 };
 await welcome();
