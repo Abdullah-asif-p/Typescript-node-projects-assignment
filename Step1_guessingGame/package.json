@@ -1,10 +1,10 @@
 {
-  "name": "guessing_game_step1",
+  "name": "step1_guessing_game",
   "repository": {
     "type": "git",
     "url": "https://github.com/Abdullah-asif-p/Typescript-node-projects-assignment"
   },
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
