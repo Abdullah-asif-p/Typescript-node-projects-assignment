@@ -5,7 +5,7 @@ const sleep = (ms = 2500) => new Promise((r) => setTimeout(r, ms));
 const startapp = async () => {
     console.clear();
     console.log(`
-  ${chalk.bgBlue("Welcome to the TODO-List App! This app helps you manage your tasks efficiently")}\n
+  ${chalk.bgYellowBright("Welcome to the TODO-List App! This app helps you manage your tasks efficiently")}\n
   ${chalk.bold("Instructions:")}\n
   1. Enter your tasks one by one. Press Enter after each task.\n
   2. To finish entering tasks, simply press Enter without typing anything.\n
