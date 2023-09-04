@@ -1,6 +1,6 @@
 {
-  "name": "step3_todolist",
-  "version": "1.0.1",
+  "name": "step5_wordcounter",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
