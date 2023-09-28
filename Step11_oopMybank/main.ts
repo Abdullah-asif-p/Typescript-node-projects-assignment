@@ -4,14 +4,14 @@ import chalk from "chalk";
 import Customer from "./Customer_Class.js";
 
 const sleep = (ms = 2500) => new Promise((r) => setTimeout(r, ms));
-const newCustomer = async () => {
+const newCustomerObj = async () => {
   const userinput = await inquirer.prompt([
     {
       type: "input",
       name: "firstname",
       message: chalk.bold.hex(`#8b3103`)("Enter firstname: "),
       validate(input) {
-        const pattern = /^\w*$/;
+        const pattern = /^[a-zA-Z]+$/;
         if (pattern.test(input)) {
           return true;
         }
@@ -22,7 +22,7 @@ const newCustomer = async () => {
       name: "lastname",
       message: chalk.bold.hex(`#8b3103`)("Enter lastname: "),
       validate(input) {
-        const pattern = /^\w*$/;
+        const pattern = /^[a-zA-Z]+$/;
         if (pattern.test(input)) {
           return true;
         }
@@ -76,7 +76,7 @@ const credit = async (customer: Customer) => {
       name: "creditAmmount",
       message: chalk.bold.hex(`#8b3103`)("Enter the ammount to credit: "),
       validate(input) {
-        const pattern = /^\d*$/;
+        const pattern = /^\d+$/;
         if (pattern.test(input)) {
           return true;
         }
@@ -93,7 +93,7 @@ const debit = async (customer: Customer) => {
       name: "debitAmmount",
       message: chalk.bold.hex(`#8b3103`)("Enter the ammount to debit: "),
       validate(input) {
-        const pattern = /^\d*$/;
+        const pattern = /^\d+$/;
         if (pattern.test(input)) {
           return true;
         }
@@ -103,7 +103,7 @@ const debit = async (customer: Customer) => {
   let debitAmmount: number = Input.debitAmmount;
   customer.BankAccount.Debit(debitAmmount);
 };
-const op = async () => {
+const chooseOperation = async () => {
   const Input = await inquirer.prompt([
     {
       type: "list",
@@ -123,7 +123,7 @@ const op = async () => {
 const Operations = async (customer: Customer) => {
   while (true) {
     await sleep();
-    let action: string = String(await op());
+    let action: string = String(await chooseOperation());
     switch (action) {
       case "Check Balance":
         console.log(customer.BankAccount.getBalance);
@@ -142,5 +142,5 @@ const Operations = async (customer: Customer) => {
     }
   }
 };
-await newCustomer();
-export { newCustomer };
+await newCustomerObj();
+export { newCustomerObj };

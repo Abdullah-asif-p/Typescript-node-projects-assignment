@@ -1,6 +1,12 @@
 import chalk from "chalk";
 
-class BankAccount {
+
+interface IbankAccount {
+  Debit(amount: number): void;
+  Credit(amount: number): void;
+}
+
+class BankAccount implements IbankAccount {
   private balance: number;
   constructor(Balance: number = 100) {
     this.balance = Balance;
