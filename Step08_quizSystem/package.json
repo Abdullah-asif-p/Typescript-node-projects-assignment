@@ -13,13 +13,13 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^5.3.0",
-    "inquirer": "^9.2.10",
     "chalk-animation": "^2.0.3",
+    "inquirer": "^9.2.10",
     "nanospinner": "^1.1.0"
   },
   "devDependencies": {
+    "@types/chalk-animation": "^1.6.1",
     "@types/inquirer": "^9.0.3",
-    "@types/node": "^20.5.7",
-    "@types/chalk-animation": "^1.6.1"
+    "@types/node": "^20.5.7"
   }
 }

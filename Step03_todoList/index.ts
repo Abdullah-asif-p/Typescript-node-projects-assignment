@@ -9,7 +9,7 @@ const startapp = async () => {
   ${chalk.bgYellowBright(
     "Welcome to the TODO-List App! This app helps you manage your tasks efficiently"
   )}\n
-  ${chalk.bold("Instructions:")}\n
+  ${chalk.bold.hex(`#8b3103`)("Instructions:")}\n
   1. Enter your tasks one by one. Press Enter after each task.\n
   2. To finish entering tasks, simply press Enter without typing anything.\n
   3. Your entered tasks will be displayed.\n
